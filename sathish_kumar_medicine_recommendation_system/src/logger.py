@@ -5,7 +5,6 @@ from datetime import datetime
 LOG_FILE = f"{datetime.now().strftime('%m_%d_%Y_%H_%M_%S')}.log"
 
 logs_dir = os.path.join(os.getcwd(), "logs")
-# logs_dir = os.path.join(os.getcwd(), "sathish_kumar_medicine_recommendation_system", "logs")
 os.makedirs(logs_dir, exist_ok=True) 
 
 LOG_FILE_PATH = os.path.join(logs_dir, LOG_FILE)
@@ -17,7 +16,3 @@ logging.basicConfig(
     level=logging.INFO,
 )
 
-# if __name__=="__main__":
-#     logging.info("Logging has started")
-
-# logger = logging.getLogger(__name__)

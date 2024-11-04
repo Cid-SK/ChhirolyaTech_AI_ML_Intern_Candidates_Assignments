@@ -41,10 +41,10 @@ def helper(dis):
     except Exception as e:
         raise CustomException(e,sys)
     
-# Assuming symptoms_dict is the dictionary that maps symptoms to indices
+
 def get_predicted_value(patient_symptoms):
     try:
-        input_vector = np.zeros(len(symptoms_dict))  # Initialize input vector
+        input_vector = np.zeros(len(symptoms_dict))  
         model_path=os.path.join("artifacts","model.pkl")
         label_path=os.path.join('artifacts','class_mapping.pkl')
         model=load_object(file_path=model_path)
@@ -54,8 +54,7 @@ def get_predicted_value(patient_symptoms):
                 input_vector[symptoms_dict[symptom]] = 1
             else:
                 logging.warning(f"Symptom '{symptom}' not found in symptoms dictionary.")
-                # Optionally: add additional handling here for missing symptoms
-
+               
         # Predict disease
         predicted_disease = label[model.predict([input_vector])[0]]
         return predicted_disease
@@ -65,20 +64,4 @@ def get_predicted_value(patient_symptoms):
     
 
 
-# # Model Prediction function
-# def get_predicted_value(patient_symptoms):
-#     try:
-#         model_path=os.path.join("artifacts","model.pkl")
-#         label_path=os.path.join('artifacts','class_mapping.pkl')
-#         print("Before Loading")
-#         model=load_object(file_path=model_path)
-#         label=load_object(file_path=label_path)
-#         print("After Loading")
-#         input_vector = np.zeros(len(symptoms_dict))
-#         for item in patient_symptoms:
-#             input_vector[symptoms_dict[item]] = 1
-#         return label[model.predict([input_vector])[0]]
-
-#     except Exception as e:
-#         raise CustomException(e,sys)
 

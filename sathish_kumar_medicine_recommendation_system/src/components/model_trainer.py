@@ -49,49 +49,6 @@ class ModelTrainer:
                 "MultinomialNB": MultinomialNB()
             }
 
-            # params = {
-            #     "Decision Tree": {
-            #         'criterion': ['gini', 'entropy'],
-            #         'splitter': ['best', 'random'],
-            #         'max_depth': [None, 10, 20, 30],
-            #     },
-            #     "Random Forest": {
-            #         'n_estimators': [50, 100, 150],
-            #         'max_depth': [None, 10, 20, 30],
-            #     },
-            #     "Gradient Boosting": {
-            #         'learning_rate': [0.1, 0.01, 0.05],
-            #         'n_estimators': [50, 100, 150],
-            #     },
-            #     "Logistic Regression": {
-            #         'C': [0.1, 1, 10],
-            #         'penalty': ['l2'],
-            #         'solver': ['lbfgs', 'liblinear'],
-            #     },
-            #     "XGBClassifier": {
-            #         'learning_rate': [0.1, 0.01, 0.05],
-            #         'n_estimators': [50, 100, 150],
-            #         'max_depth': [3, 5, 7],
-            #     },
-            #     "SVM": {
-            #         'C': [0.1, 1, 10],
-            #         'kernel': ['linear', 'rbf'],
-            #         'gamma': ['scale', 'auto']
-            #     },
-            #     "KNeighbors": {
-            #         'n_neighbors': [3, 5, 7, 9],
-            #         'weights': ['uniform', 'distance']
-            #     },
-            #     "MultinomialNB": {
-            #         'alpha': [0.1, 0.5, 1.0]  
-            #     }
-            # }
-
-            # model_report: dict = evaluate_models(
-            #     X_train=X_train, y_train=y_train, X_test=X_test, y_test=y_test,
-            #     models=models, param=params
-            # )
-
             model_report: dict = evaluate_models(
                 X_train=X_train, y_train=y_train, X_test=X_test, y_test=y_test,
                 models=models
